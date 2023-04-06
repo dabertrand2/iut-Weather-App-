@@ -13,8 +13,8 @@ export default function cityWeather( weather: LocalWeather){
     <View>
         <View style={cityWeatherStyle.container}>
             <CityComponent item={weather.item.city}/>
-            <Text> Température a: {weather.item.temperature} </Text>
-            <Text> Resentie : {weather.item.temperatureFeelsLike}</Text>
+            <Text style={cityWeatherStyle.text}> Température a: {weather.item.temperature} </Text>
+            <Text style={cityWeatherStyle.text}> Resentie : {weather.item.temperatureFeelsLike}</Text>
             
         </View>
 
@@ -27,15 +27,18 @@ export default function cityWeather( weather: LocalWeather){
 const cityWeatherStyle= StyleSheet.create({
     container:{
         flex: 1,
+        padding: "2%",
         flexDirection: "column",
         alignSelf: "center",
-        width:"80%",
+        
         borderRadius: 8,
         borderWidth: 0.5,
         borderColor:"black",
-        backgroundColor: "red"
+        backgroundColor: "#BE6E9E"
         
-        
-    }
+    },
+    text:{
+        color: "#3A2558",
+    },
 
 });

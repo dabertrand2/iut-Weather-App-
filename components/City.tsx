@@ -10,7 +10,7 @@ export function CityComponent ( city : PropsCity)
 {
 return(
     <View >
-        <Text> Ville: {city.item.name}</Text>
+        <Text style={cityStyle.name}> Ville: {city.item.name}</Text>
         <Text style={cityStyle.text}> 
         Latitude: {city.item.latitude} Longitude: {city.item.longitude} 
         </Text>
@@ -25,7 +25,10 @@ const cityStyle= StyleSheet.create({
 
     text:{
         fontSize: 11,
-        color:"blue"
-    }
+        color:"white"
+    },
+    name:{
+        color: "#3A2558",
+    },
 
 });

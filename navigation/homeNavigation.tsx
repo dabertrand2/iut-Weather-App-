@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from '../screens/HomeScreen';
+import navigation from "../navigation/stackNavigation";
 import SettingScreen from '../screens/SettingScreen';
 
 
@@ -9,8 +9,8 @@ export default function Navigation(){
 return(
     <NavigationContainer>
         <BottomTabNavigator.Navigator initialRouteName="Home">
-            <BottomTabNavigator.Screen name="Home" component={HomeScreen}
-                                      options={{title: 'Home',}}/>
+            <BottomTabNavigator.Screen name="Home" component={navigation}
+                                      options={{title: 'Home', headerShown: false}} />
             <BottomTabNavigator.Screen name="Settings" component={SettingScreen}
                                            options={{
                                                title: 'Settings',
