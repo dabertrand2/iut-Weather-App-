@@ -140,6 +140,30 @@ export class Weather {
   }
 }
 
+export class image {
+  private _name: string;
+  private _imageUri: string;
+  
+  constructor(name: string, imageUri:string){
+    this._name=name;
+    this._imageUri=imageUri;
+  }
+
+  get name():string{
+    return this._name;
+  }
+  set name(value:string){
+    this._name=value;
+  }
+  get imageUri():string{
+    return this._imageUri;
+  }
+  set imageUri(value:string){
+    this._imageUri=value;
+  }
+
+}
+
 export const CITIES_DATA: City[] = [
   new City("Paris", 48.866667, 2.333333),
   new City("Clermont-Ferrand", 45.777222, 3.087025),

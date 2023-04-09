@@ -1,22 +1,26 @@
 import { StyleSheet, View, Text, FlatList, TouchableHighlight } from "react-native";
 import { Weather } from "../data/stub";
-import Test from '../components/cityWeather';
+import CityWeatherComponent from '../components/cityWeather';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getWeather_Data } from "../redux/actions/action";
+import { getWeather_Data,getWeather_Condition } from "../redux/actions/action";
 
 
 
 export default function HomeScreen({route,navigation}){
     const weatherList=useSelector(state => state.appReducer.city_weather) 
-    
+    const conditionList=useSelector(state =>state.appReducer.weather_condition)
     const dispatch = useDispatch();
     
     useEffect(() => {
-        const loadNounours = async () => {
+        const loadWeather = async () => {
           await dispatch(getWeather_Data());
         };
-        loadNounours();
+        loadWeather();
+        const loadCondition = async ()=>{
+            await dispatch(getWeather_Condition());
+        };
+        loadCondition();
       }, [dispatch]);
    
    
@@ -32,7 +36,7 @@ export default function HomeScreen({route,navigation}){
     <View style={style.listStyle} >
        <FlatList data={weatherList} renderItem={({item})=>
         <TouchableHighlight onPress={() => navigation.navigate("CityDetails",{"Weather": item})}>
-            <Test item={item}/>
+            <CityWeatherComponent item={item} item2={conditionList.imageUri}/>
         </TouchableHighlight>
         }keyExtractor={(item: Weather) => item.city.name}/>  
     </View>

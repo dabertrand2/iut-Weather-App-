@@ -1,11 +1,12 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import { CityComponent } from "./City";
-import { Weather } from "../data/stub";
+import { Weather, image } from "../data/stub";
 
 
 
 type LocalWeather ={
     item: Weather;
+    item2: image;
 }
 
 export default function cityWeather( weather: LocalWeather){
@@ -15,7 +16,11 @@ export default function cityWeather( weather: LocalWeather){
             <CityComponent item={weather.item.city}/>
             <Text style={cityWeatherStyle.text}> Température a: {weather.item.temperature} </Text>
             <Text style={cityWeatherStyle.text}> Resentie : {weather.item.temperatureFeelsLike}</Text>
-            
+            <Image
+            source={{
+                uri: weather.item2.imageUri,
+            }}
+            />
         </View>
 
         <View>
