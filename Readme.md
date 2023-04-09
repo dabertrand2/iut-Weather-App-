@@ -1,11 +1,11 @@
 
-#iut-Weather-App
+# iut-Weather-App
 
 >Ce projet est une application mobile météo, realisé en React Native. 
 >
 >*Il n'est actuellement pas terminé et encore en cours de développement*.
 
-##La page ***Home***
+## La page ***Home***
 
 Elle représente une ***FlatList*** de villes en cliquant sur une ville, vous pourrai accéder grace a une ***StackNavigation*** aux détails de chaque ville.  
 
