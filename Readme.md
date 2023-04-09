@@ -1,8 +1,8 @@
 
 # iut-Weather-App
 
->Ce projet est une application mobile météo, realisé en React Native. 
->
+Ce projet est une application mobile météo, realisé en React Native. 
+
 >*Il n'est actuellement pas terminé et encore en cours de développement*.
 
 ## La page ***Home***
